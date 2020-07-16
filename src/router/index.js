@@ -1,14 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
-import index from '../views/index.vue'
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
     name: 'index',
-    component: index
+    component: () => import('../views/index.vue'),
+  },
+  {
+    path:'/Edit',
+    name:'Edit',
+    component:() => import('../views/EditWorld.vue'),
+  },
+  {
+    path:'/Document',
+    name:'Document',
+    component:() => import('../views/documentdetail.vue'),
   }
 ]
 
